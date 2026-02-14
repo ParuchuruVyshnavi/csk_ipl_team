@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+}
+
+
+nav {
+    background: #f9c400;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/stadium.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 50px;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background:black;
+    color: yellow;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+}
+
+.section-about-container{
+    background: #f9c400;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 60px 8%;
+    background: #f9c400;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color:#121212;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    width: 350px;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-section {
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 32px;
+    color:yellow;
+}
+.gallery-category {
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
+.gallery-category h3 {
+    font-size: 22px;
+    color:yellow;;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.stats-section {
+    padding: 120px 10%;
+    text-align: center;
+    background-image: url("images/stadium.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+.stats-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.stats-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-stat h1 {
+    font-size: 100px;
+    color: #f9c400;
+    margin: 20px 0;
+}
+
+.highlight-stat p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.secondary-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.mini-stat h3 {
+    font-size: 40px;
+    color: #f9c400;
+}
+
+.win-bar {
+    margin-top: 60px;
+}
+
+.progress {
+    width: 60%;
+    height: 12px;
+    background: #333;
+    margin: 10px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: #f9c400;
+    transition: width 1.5s ease;
+}
+
+
+.stats-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-trophy {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-size: 60px;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+
+.players-section {
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.players-section h2 {
+    margin-bottom: 50px;
+    font-size: 32px;
+    color: #f9c400;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+
+
+.player-card {
+    perspective: 1000px;
+    height: 360px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.player-card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    background: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card-front img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #f9c400;
+    color: black;
+    text-align: center;
+}
+
+
+
+.flip-hint {
+    margin-top: 10px;
+    font-size: 12px;
+    opacity: 0.6;
+    color: #f9c400;
+}
+
+.player-card.flip .flip-hint {
+    display: none;
+}
+
+
+
+@media (max-width: 992px) {
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-section {
+    padding: 120px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 34px;
+    margin-bottom: 60px;
+    color: #f9c400;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: #f9c400;
+}
+
+.contact-info p {
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #1f1f1f;
+    color: white;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 1px solid #f9c400;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #eebe12;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: white;
+    color: black;
+}
+
+.form-success {
+    margin-top: 10px;
+    color: #4caf50;
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
